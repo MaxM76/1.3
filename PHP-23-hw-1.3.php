@@ -1,23 +1,23 @@
+<?php
 $x = rand(0,100);
-echo 'Р§РёСЃР»Рѕ '.$x;
-$x = $_GET['x'];
+echo 'Пользователь задумал: ' . $x . PHP_EOL;
+//$x = $_GET['x'];
 
 $var1 = 1;
 $var2 = 1;
+$result_str = 'Задуманное число НЕ входит в числовой ряд';
 
-if ($var1 > $x) { 
-  echo 'user not';
-}
-else
-{
-  if ($var1 == $x) {
-    echo 'user yes'
-  }
-  else
-  {
+while ($var1 <= $x) {
+    if ($var1 == $x) {
+        $result_str = 'Задуманное число входит в числовой ряд';
+        break;
+    }
+
     $var3 = $var1;
     $var1 = $var1 + $var2;
     $var2 = $var3;
-  }
 }
+
+echo $result_str . PHP_EOL;
+?>
 
